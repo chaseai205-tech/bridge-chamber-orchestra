@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #f4f1ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f4f1ea;
+  color: #111111;
+  font-family:
+    Arial,
+    "Helvetica Neue",
+    "Microsoft YaHei",
+    "Noto Sans SC",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(143, 47, 42, 0.2);
+}
+
+.poster-title {
+  font-family:
+    Arial Black,
+    Impact,
+    "Helvetica Neue",
+    Arial,
+    "Microsoft YaHei",
+    sans-serif;
+  letter-spacing: 0;
+}
+
+.poster-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.poster-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.85rem 1.35rem;
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  transition:
+    transform 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease;
+}
+
+.poster-button:hover {
+  transform: translateY(-2px);
+}
+
+.magazine-collage {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.magazine-collage figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: #111111;
+}
+
+.magazine-collage figcaption {
+  position: absolute;
+  bottom: 0.9rem;
+  left: 0.9rem;
+  background: #f4f1ea;
+  color: #111111;
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 0.45rem 0.65rem;
+  text-transform: uppercase;
+}
+
+.collage-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition:
+    filter 650ms ease,
+    transform 650ms ease,
+    opacity 650ms ease;
+}
+
+.group:hover .collage-image {
+  filter: contrast(1.04);
+  transform: scale(1.045);
+}
+
+.collage-text {
+  border-top: 1px solid #111111;
+  border-bottom: 1px solid #111111;
+  padding: 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .magazine-collage {
+    grid-template-columns: 1.1fr 0.7fr 0.82fr 0.58fr;
+    grid-template-rows: 135px 185px 150px 118px;
+    gap: 1.25rem;
+  }
+
+  .collage-a {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+
+  .collage-b {
+    grid-column: 3 / 5;
+    grid-row: 1 / 3;
+    margin-top: 3rem;
+  }
+
+  .collage-c {
+    grid-column: 1;
+    grid-row: 3 / 5;
+    margin-left: 3rem;
+  }
+
+  .collage-d {
+    grid-column: 3;
+    grid-row: 3 / 5;
+    margin-top: -1.5rem;
+  }
+
+  .collage-e {
+    grid-column: 4;
+    grid-row: 3;
+  }
+
+  .collage-text {
+    grid-column: 2;
+    grid-row: 3;
+    align-self: end;
+  }
+}
