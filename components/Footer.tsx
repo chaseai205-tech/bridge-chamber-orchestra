@@ -24,7 +24,7 @@ export function Footer() {
         </div>
       </div>
       <div className="mx-auto max-w-6xl px-4 pb-8 text-xs text-paper/55 sm:px-6">
-        © {new Date().getFullYear()} {site.englishName}. Built for Vercel.
+        © {new Date().getFullYear()} {site.englishName}. Static site for Cloudflare Pages.
       </div>
     </footer>
   );
